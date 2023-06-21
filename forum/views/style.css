@@ -1,0 +1,288 @@
+body {
+    margin: 0;
+    background-color: rgb(42, 44, 46);
+}
+
+header{
+    display: flex;
+    color: white;
+    flex-direction: row;
+    align-items: center;
+    height: 100px;
+}
+.forum {
+    margin-left: 40px;
+    font-family: sans-serif;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.forum:hover {
+    color: rgb(220, 221, 221);
+}
+
+.button_filters {
+    background: none;
+    color: white;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.button_filters:hover {
+    color: rgb(220, 221, 221);
+}
+
+.addpost button{
+    background: none;
+    color: white;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    margin-left: 90px;
+}
+
+.addpost button:hover{
+    color: rgb(220, 221, 221);
+}
+
+.SelectFilters {
+    margin: 20px;
+}
+.filters {
+    display: none;
+    position: absolute;
+}
+.button_filters:focus {
+    background-color: #ccc;
+    
+}
+
+.user-log{
+    margin-left: auto;
+    margin-right: 40px;
+
+}
+
+.user-log button {
+    font-size: 16px;
+    background-color: white;
+    color:rgb(42, 44, 46);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 3px 0;
+    padding: 3px 5px;
+}
+
+.user-log button:hover {
+    background-color: rgb(220, 221, 221);
+}
+
+.picture-log {
+    position: relative;
+    margin-left: auto;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#cercle-log {
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    padding: 0;
+    border-radius: 200px;
+    border: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.log-out  {
+    cursor: pointer;
+    padding: 5px;
+    display: none;
+    position: absolute;
+    border: none;
+}
+
+.picture-log:hover .log-out {
+    display: block;
+}
+
+main {
+    background-color: white;
+    padding: 10vh 0 10vh;
+}
+
+.container {
+    display: flex;
+    width: auto;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+#cercle {
+    height: 40px;
+    width: 40px;
+    border-radius: 200px;
+    background-position: center center;
+    background-size: cover;
+}
+#cercle-com {
+    height: 30px;
+    width: 30px;
+    border-radius: 200px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.post-comment{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.modify-post {
+    padding: 8px;
+    background-color: #fff;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.13);
+    border-radius: 5px;
+    height: 200px;
+    width: 100px;
+    position: absolute;
+    margin-left: -170px;
+    /* visibility: hidden; */
+}
+.post {
+    color:rgb(42, 44, 46) ;
+    font-family: Roboto,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";;
+    background-color: #f1f1f1;
+    display: flex;
+    border: none;
+    flex-direction: column;
+    width: 50vw;
+    min-height: 10vh;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 20px;
+    font-size: large;
+    cursor: pointer ;
+}
+
+.info-user-post{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.info-user-post p {
+    margin: 0;
+    margin-left: 15px;
+}
+
+.post-content {
+    position: relative;
+    /* display: flex; */
+    width: 100%;
+}
+
+.content {
+    margin: 5px 0;
+    margin-left: 55px;
+    text-align: start;
+    width: 85%;
+    word-wrap : break-word; 
+}
+
+.post-content img {
+    max-width: 80%;
+    background-size: auto;
+    min-width: none;
+    /* object-fit: cover; */
+}
+
+/* .coms {
+    display: none;
+} */
+
+.comments {
+    /* display: none; */
+    border: none;
+    width: 30vw;
+    min-height: 10vh;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 20px;
+    color: rgb(42, 44, 46);
+    font-family: Roboto,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";;
+    background-color: #f1f1f1;
+    font-size: large;
+}
+
+.heart-counter {
+    margin-left: auto;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.unlike{
+    color:#ccc;
+}
+  
+.like{
+    color: #e63636;
+
+}
+.like-counter{
+    color:#ccc;
+    font-size: smaller;
+}
+/* .points {
+    position: relative;
+    height: 100%;
+} */
+
+
+
+.date {
+    /* display: flex; */
+    
+    color:#ccc;
+    font-size: smaller;
+    /* margin: 0; */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+}
+
+
+
+footer {
+    display: flex;
+    color: white;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.notifs {
+    position: absolute;
+    padding: 3px;
+    margin: 0;
+    /* width: 1px; */
+    background-color: #e63636;
+    border-radius: 50px;
+}

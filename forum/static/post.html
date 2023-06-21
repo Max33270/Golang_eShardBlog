@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post - Forum</title>
+    <link rel="icon" type="image/x-icon" href="/forum/views/i.ico">
+    <link rel="stylesheet" href="/forum/views/post.css">
+</head>
+<body>
+    <header>
+        <form action="/">
+            <button class="forum">Forum</button>
+        </form>
+    </header>
+    <main>
+        <form action="/addpost" method="post" enctype="multipart/form-data" class="main-post">
+            <div class="text">
+                <div class="categ">
+                    {{range .PostCategory}}
+                    <p><input  class="checkbox" type="checkbox" name="Sport" value="{{.}}" > {{.}}</p>
+                    {{end}}
+                </div>
+                <textarea placeholder="Write something..." name="post_content" cols="50" autofocus></textarea>
+                <div class="plus-button">
+                    <label for="post-image" class="post-image-icon"><i class="fa fa-image"></i></label>
+                    <input type="file" id="post-image" name="post-image" accept=".jpg, .jpeg, .png, .gif" multiple style="display: none; cursor: pointer;"></input>
+                    <div>
+                        {{range .Post}}
+                        <img src="profil/{{.ContentPhoto}}">
+                        {{end}}
+                    </div>
+                </div>
+            </div>
+            <button class="post">Post</button>
+        </form>
+    </main>
+
+</body>
+</html>
+
+
+
+
