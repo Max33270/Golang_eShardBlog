@@ -1,4 +1,3 @@
-
 var typeUser = "";
 var a = true;
 var id_div = 5;
@@ -20,7 +19,6 @@ function NewComment(id) {
     formCom.appendChild(inputText);
 
     var inputhidden = document.createElement("input");
-    // inputhidden.style.display = "none";
     inputhidden.name = "post_id";
     inputhidden.type = "hidden";
     inputhidden.value = id;
@@ -51,9 +49,9 @@ function SelectFilters() {
   }
 }
 
+
 function modify(id){
   var elements = document.getElementsByClassName('modify-post');
-
   for (var i = 0; i < elements.length; i++){
       elements[i].style.display = "none";
   }
@@ -63,6 +61,7 @@ function modify(id){
     document.getElementById(id).style.display = "none";
   }
 }
+
 
 function UserPermissions(type){
   typeUser = type
@@ -74,6 +73,7 @@ function UserPermissions(type){
     document.getElementById("user-profile").style.display = "none";
   }
 }
+
 
 function Like(){
   document.querySelectorAll(".fa-heart")
@@ -94,6 +94,7 @@ function Like(){
   });
 }
 
+
 function replace(id){
   if (id != id_div){
     document.getElementById('div' + id).style.display = "flex";
@@ -104,7 +105,6 @@ function replace(id){
 
 
 function modifypost(id){
-  //replace div by an input
   var elements = document.getElementById('post-content'+id);
   if (elements.textContent.replace(/[\n\r]+|[\s]{2,}/g, ' ').trim() != ""){
     elements.innerHTML = '<input type="text" name="post_content" class="modify-text" autofocus value="' + elements.textContent.replace(/[\n\r]+|[\s]{2,}/g, ' ').trim() + '">';

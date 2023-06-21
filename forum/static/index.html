@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
@@ -9,7 +8,7 @@
     <link rel="stylesheet" href="/forum/views/style.css">
     <script src="/forum/views/script.js"></script>
     <link rel="icon" type="image/x-icon" href="/forum/views/i.ico">
-    <title>Accueil - Forum</title>
+    <title>Accueil - Blog Maxim</title>
 </head>
 <body>
     <header>
@@ -24,15 +23,14 @@
                 <button>Add New Post</button>
             </form>
         </div>
-        </div>
-        <div class="user-log" id="user-profile">
-            <form action="/login">
-                <button class="button_login">Login</button>
-            </form>
-            <form action="/adduser">
-                <button class="button_sign_up">Sign up</button>
-            </form>
-        </div>
+            <div class="user-log" id="user-profile">
+                <form action="/login">
+                    <button class="button_login">Login</button>
+                </form>
+                <form action="/adduser">
+                    <button class="button_sign_up">Sign up</button>
+                </form>
+            </div>
         <div class="picture-log" id="name">
             {{if ne .Notifs 0}}
             <p class="notifs">{{.Notifs}}</p>
@@ -73,27 +71,9 @@
                             <p class="date">{{.Date}}</p>
                         </div>
                     </button>
-                    <div id="comment{{.Pid}}" class="comment"></div>
-                        {{range .Comments}}
-                        <button class="comments">
-                            <div class="info-user-post">
-                                <div id="cercle-com" style="background-image: url('forum/profil/{{.User.Avatar}}');"></div>
-                                <p>{{.User.Username}}</p>
-                                <div class="heart-counter">
-                                    <i class="/{{.Cid}} 1 fa fa-heart {{.LikeActive}}  {{.User.Uid}}"></i>
-                                    <p2 class="like-counter">{{.Like}}</p2>
-                                </div>
-                            </div>
-                            <div class="post-content">
-                                <p class="content">{{.Content}}</p>
-                                <p class="date">{{.Date}}</p>
-                            </div>
-                        </button>
-                        {{end}}
-                </div>
-            {{end}}
-        </div>
-    </main>
+                {{end}}
+            </div>
+        </main>
     <script> 
         UserPermissions("{{.User.Type}}");
         Like();

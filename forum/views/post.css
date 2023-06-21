@@ -9,6 +9,7 @@ header{
     align-items: center;
     height: 15vh;
 }
+
 main {
     display: flex;
     height: 85vh;
@@ -17,13 +18,11 @@ main {
     justify-content: center;
 }
 
-
 .text {
     display: flex;
     align-items: center;
     margin: 0 10%;
 }
-
 
 .categ{
     width:max-content;
@@ -31,6 +30,7 @@ main {
     font-family: Roboto,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     font-size: large;
 }
+
 .text textarea {
     width: 40vw;
     height: 40vh;
