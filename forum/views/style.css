@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: rgb(42, 44, 46);
+    background-color: rgb(4, 70, 250);
 }
 
 header{
@@ -8,8 +8,9 @@ header{
     color: white;
     flex-direction: row;
     align-items: center;
-    height: 100px;
+    height: 90px;
 }
+
 .forum {
     margin-left: 40px;
     font-family: sans-serif;
@@ -19,6 +20,7 @@ header{
     background: none;
     border: none;
 }
+
 .forum:hover {
     color: rgb(220, 221, 221);
 }
@@ -52,6 +54,7 @@ header{
 .SelectFilters {
     margin: 20px;
 }
+
 .filters {
     display: none;
     position: absolute;
@@ -135,6 +138,7 @@ main {
     background-position: center center;
     background-size: cover;
 }
+
 #cercle-com {
     height: 30px;
     width: 30px;
@@ -148,6 +152,7 @@ main {
     flex-direction: column;
     align-items: flex-end;
 }
+
 .modify-post {
     padding: 8px;
     background-color: #fff;
@@ -157,8 +162,8 @@ main {
     width: 100px;
     position: absolute;
     margin-left: -170px;
-    /* visibility: hidden; */
 }
+
 .post {
     color:rgb(42, 44, 46) ;
     font-family: Roboto,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";;
@@ -189,7 +194,6 @@ main {
 
 .post-content {
     position: relative;
-    /* display: flex; */
     width: 100%;
 }
 
@@ -205,15 +209,9 @@ main {
     max-width: 80%;
     background-size: auto;
     min-width: none;
-    /* object-fit: cover; */
 }
 
-/* .coms {
-    display: none;
-} */
-
 .comments {
-    /* display: none; */
     border: none;
     width: 30vw;
     min-height: 10vh;
@@ -241,30 +239,20 @@ main {
     color: #e63636;
 
 }
+
 .like-counter{
     color:#ccc;
     font-size: smaller;
 }
-/* .points {
-    position: relative;
-    height: 100%;
-} */
-
-
 
 .date {
-    /* display: flex; */
-    
     color:#ccc;
     font-size: smaller;
-    /* margin: 0; */
     position: absolute;
     bottom: 0;
     right: 0;
     margin: 0;
 }
-
-
 
 footer {
     display: flex;
@@ -282,7 +270,16 @@ footer p {
     position: absolute;
     padding: 3px;
     margin: 0;
-    /* width: 1px; */
     background-color: #e63636;
     border-radius: 50px;
+}
+
+.logoeshard {
+    width: 225px;
+    height: auto;
+    background-color: #fff;
+    padding: 15px;
+    /* margin-top: 3px;
+    margin-left: 3px;
+    margin-bottom: 3px; */
 }
