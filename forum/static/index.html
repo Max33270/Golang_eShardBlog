@@ -21,29 +21,9 @@
         </form>
         <div class="addpost" id="addpost">
             <form action="/addpost">
-                <button>Post</button>
+                <button>Add New Post</button>
             </form>
         </div>
-        <div class="SelectFilters">
-            <button onfocus="SelectFilters()" class="button_filters">Filters</button>
-            
-            <form action="/filters" method="post" class="filters" name="Category" id="filters">
-                <select name="categ">
-                    <option value="None">Tout</option>
-                    {{range .PostCategory}}
-                    <option value="{{.}}">{{.}}</option>
-                    {{end}}
-                </select>
-                <select  id="select-date" name="Date">
-                    <option value="Croissante">Date Croissante</option>
-                    <option value="Decroissante">Date Décroissante</option>
-                </select>
-                <select  id="select-date" name="LikesFiltres">
-                    <option value="plikes">Plus likés</option>
-                    <option value="mlikes">Moins likés</option>
-                </select>
-                <button name="Confirm">Apply</button>
-            </form>
         </div>
         <div class="user-log" id="user-profile">
             <form action="/login">
@@ -57,7 +37,6 @@
             {{if ne .Notifs 0}}
             <p class="notifs">{{.Notifs}}</p>
             {{end}}
-
             <form action="/profile" method="post" class="pict-log-height">
                 <button id="cercle-log"  style="background-image: url('forum/profil/{{.User.Avatar}}');"></button>
             </form>
@@ -92,14 +71,9 @@
                                 <img src="forum/profil/{{.ContentPhoto}}">
                             {{end}}
                             <p class="date">{{.Date}}</p>
-
-                            
-                            <!-- <a onclick="DisplayComments(id)" id="{{.Pid}}" class="showComments">Show Comments</a> -->
                         </div>
                     </button>
                     <div id="comment{{.Pid}}" class="comment"></div>
-
-                    <!-- <div id="commentaires{{.Pid}}" class="coms"> -->
                         {{range .Comments}}
                         <button class="comments">
                             <div class="info-user-post">
@@ -116,23 +90,13 @@
                             </div>
                         </button>
                         {{end}}
-                    <!-- </div> -->
-
                 </div>
             {{end}}
         </div>
     </main>
-    <footer>
-        <p>Copyright © 2023</p>
-        <p>All rights reserved</p>
-    </footer>
     <script> 
         UserPermissions("{{.User.Type}}");
         Like();
     </script>
 </body>
 </html>
-
-
-
-

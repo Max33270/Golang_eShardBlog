@@ -21,23 +21,6 @@ header{
     border: none;
 }
 
-.forum:hover {
-    color: rgb(220, 221, 221);
-}
-
-.button_filters {
-    background: none;
-    color: white;
-    font-size: 30px;
-    border: none;
-    cursor: pointer;
-}
-
-
-.button_filters:hover {
-    color: rgb(220, 221, 221);
-}
-
 .addpost button{
     background: none;
     color: white;
@@ -45,23 +28,14 @@ header{
     border: none;
     cursor: pointer;
     margin-left: 90px;
+    padding: 10px;
+    border : 3px solid white;
+    border-radius: 25px;
 }
 
 .addpost button:hover{
-    color: rgb(220, 221, 221);
-}
-
-.SelectFilters {
-    margin: 20px;
-}
-
-.filters {
-    display: none;
-    position: absolute;
-}
-.button_filters:focus {
-    background-color: #ccc;
-    
+    color: rgb(52, 226, 46);
+    border : 3px solid rgb(52, 226, 46);
 }
 
 .user-log{
@@ -279,7 +253,4 @@ footer p {
     height: auto;
     background-color: #fff;
     padding: 15px;
-    /* margin-top: 3px;
-    margin-left: 3px;
-    margin-bottom: 3px; */
 }
