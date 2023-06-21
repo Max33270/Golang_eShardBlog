@@ -13,7 +13,6 @@
 </head>
 <body>
     <input id="type-user" type="hide" value="{{.User.Type}}">
-
     <div class="user-profile">
         <form action="/" method="post" class="back">
             <button ><i class="fa fa-arrow-left fa-lg"></i></button>
@@ -25,22 +24,17 @@
             <input type="file" id="profile-picture" name="image_uploads" accept=".jpg, .jpeg, .png, .gif" multiple style="background-image: url('forum/profil/{{.User.Avatar}}');" >
         </form>
         <h2 class="username">{{.User.Username}}</h2>
-        
         <div class="type">
             <p>{{.User.Type}}</p>
         </div>
     </div>
-    
     <div class="button-bar">
         <button id="menubar" onclick="replace(5)" class="menubar" autofocus>Notifications</button>
         <button id="menubar" class="menubar" onclick="replace(1)" >Posts</button>
-        <button id="menubar" onclick="replace(3)" class="menubar hide">Categories</button>
         <button id="menubar" onclick="replace(4)" class="menubar hide">Users</button>
         <button class="end-line" style="flex: 2 1 0; margin-right: 0;"></button>
     </div>
-
     <div class="pages" id="div1">
-
         <div class="post-container-body1">
             {{range .Post}}
             <div class="all-posts">
@@ -56,11 +50,8 @@
                         <p>Modify</p>
                         <i class="fa fa-pencil" aria-hidden="true"></i>
                     </button>
-
                 </div>
-
                 <span onclick="modify(id)" id="modify-post{{.Pid}}" class="iconify" data-icon="feather:more-vertical"></span>
-
                 <button class="post">
                     <form action="/modify" method="post">
                         <input type="hidden" name="pid" value="{{.Pid}}">
@@ -71,13 +62,11 @@
                     {{if ne .ContentPhoto "rien"}}
                         <img src="forum/profil/{{.ContentPhoto}}">
                     {{end}}
-
                 </button>
             </div>
             {{end}}
         </div>
     </div>
-
     <div class="pages" id="div3">
         <div class="post-container-body">
             {{range .PostCategory}}
@@ -96,24 +85,21 @@
                 <button name="promotion" value="promote {{.Uid}} {{.Type}}">Promote</button>
                 <button name="promotion" value="demote {{.Uid}} {{.Type}}">Demote</button>
             </form>
-            
             <div id="cercle" style="background-image: url('profil/{{.Avatar}}');"></div>
             <p class="name">{{.Username}}</p>
             <p class="type">{{.Type}}</p>
-
         </div>
         {{end}}
-
-    </div>
+    </div>  
     <div class="pages" id="div5">
+        <h2 class="notifs-title">Notifications</h2>
+        <hr style="width:25%" size="3" color="grey">
         {{range .Notifications}}
         <div class="post-container-body4">
             {{.}}
         </div>
         {{end}}
-
     </div>
-
     <script>
         document.getElementById("profile-picture").onchange = function() {
         document.getElementById("form").submit();
@@ -124,9 +110,6 @@
                 hidden[i].style.display = 'none';
             }
         }
-        
-        
     </script>
-    
 </body>
 </html>

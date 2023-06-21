@@ -21,6 +21,11 @@ header{
     border: none;
 }
 
+
+.forum:hover {
+    color: rgb(220, 221, 221);
+}
+
 .addpost button{
     background: none;
     color: white;
@@ -83,10 +88,16 @@ header{
 
 .log-out  {
     cursor: pointer;
-    padding: 5px;
+    margin-right: 25px;
     display: none;
     position: absolute;
+    color: white;
+    text-decoration: none;
+    font-size: large;
     border: none;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(4, 70, 250);;
 }
 
 .picture-log:hover .log-out {

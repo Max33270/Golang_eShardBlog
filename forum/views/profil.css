@@ -1,10 +1,10 @@
-
 body {
-    background-color: rgb(42, 44, 46);
+    background-color: rgb(4, 70, 250);
     margin: 0;
     display: flex;
     flex-direction: column;
 }
+
 #type-user {
     display: none;
 }
@@ -21,8 +21,8 @@ body {
     margin-top: 10px;
     margin-left: 10px;
 }
-.back button{
 
+.back button{
     color: white;
     background: none;
     border: none;
@@ -55,21 +55,25 @@ body {
 .type {
     margin-left: auto;
     margin-right: 30px;
-    height: 100%;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: large;
+    border : 3px solid white;
+    border-radius: 25px;
 }
 
 .button-bar button {
     font-family: Roboto,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     font-size: larger;
-    /* float:left; */
     color: white;
     border: none;
-    /* width: 18%; */
     width: 18vw;
     height: 60px;
-    background-color: rgb(42, 44, 46);
+    background-color: rgb(4, 70, 250);
     margin: 3px 3px 0 0;
 }
+
 .button-bar .menubar:focus {
     outline: none;
     background-color: white;
@@ -79,6 +83,7 @@ body {
 .active {
     background-color: white;
 }
+
 .button-bar {
     background-color: white;
     display: flex;
@@ -92,32 +97,34 @@ body {
     align-items: center;
     min-height: 70vh;
 }
+
 .post-container-body1{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 10vh 0;
-    
 }
 
 #div1{
     display: none;
 }
+
 #div2 {
     display: none;
 }
+
 #div3{
     display: none;
-
 }
+
 #div4{
     display: none;
-
 }
+
 #div5{
     display: flex;
-
 }
+
 .post-container-body4 {
     display: flex;
     justify-content: start;
@@ -129,6 +136,7 @@ body {
 .post-container-body4 .type {
     margin-left: auto;
 }
+
 .post-container-body4 .name{
     margin-left: 10px;
 }
@@ -167,8 +175,8 @@ body {
   
 .like{
     color: #a8bbd8;
-
 }
+
 .modify-post{
     border-radius: 5px;
     height: auto;
@@ -176,7 +184,6 @@ body {
     position: absolute;
     margin-left: -170px;
     display: none;
-    /* visibility: hidden; */
 }
 
 .all-posts {
@@ -184,6 +191,7 @@ body {
     align-items: center;
 
 }
+
 .like-counter{
     color:#ccc;
     font-size: smaller;
@@ -192,10 +200,10 @@ body {
 html {
     font-family: sans-serif;
 }
+
 .iconify {
     cursor: pointer;
 }
-
 
 input[type='file'] {
     color: transparent;
@@ -208,7 +216,6 @@ input[type='file'] {
 .elements-modify {
     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.13);
     padding: 0 20px;
-    
     cursor: pointer;
     background-color: white;
     border: none;
@@ -226,21 +233,38 @@ input[type='file'] {
     border: none;
     background-color: #f1f1f1;
     font-size: large;
-
 }
+
 .notifs {
     position: absolute;
     padding: 3px;
     margin: 0;
-    /* width: 1px; */
     background-color: #e63636;
     border-radius: 50px;
     margin-left: 40px;
 
 }
+
 .post img {
     max-width: 80%;
     background-size: auto;
     min-width: none;
-    /* object-fit: cover; */
+}
+
+.post-container-body4 {
+    background-color: #f5f5f5;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(4, 70, 250);
+    font-weight: bold;
+    font-size: large;
+}
+  
+.post-container-body4 p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
 }
