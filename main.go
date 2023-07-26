@@ -21,6 +21,7 @@ func main() {
 	http.HandleFunc("/profile", f.Profile)
 	http.HandleFunc("/about", f.About)
 	http.HandleFunc("/about_company", f.AboutCompany)
+	http.HandleFunc("/summary", f.Summary)
 
 	http.HandleFunc("/adduser", f.AddUser)
 	http.HandleFunc("/addpost", f.AddPost)
