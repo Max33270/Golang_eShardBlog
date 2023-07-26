@@ -3,7 +3,6 @@ package forum
 import (
 	"database/sql"
 	"net/http"
-	"fmt"
 )
 
 func CreateCookie(w http.ResponseWriter, r *http.Request, uid string) {
@@ -33,9 +32,7 @@ func GetUserByCookies(w http.ResponseWriter, r *http.Request) User {
 	var avatar string
 	typee := "guest"
 	if err != nil {
-		fmt.Println("Cookie not found")
 	} else {
-		fmt.Println("Cookie found")
 		db, _ := sql.Open("sqlite3", "./database.db")
 		rows, err := db.Query("SELECT * FROM user WHERE uid='" + cookie.Value + "'")
 		Debug(err)
