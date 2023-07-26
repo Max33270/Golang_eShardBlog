@@ -12,20 +12,16 @@ import (
 )
 
 func AddUser(w http.ResponseWriter, r *http.Request) {
-
 	switch r.Method {
-
 	case "GET":
 		DeleteCookie(w, r)
 		tmpl := template.Must(template.ParseFiles("forum/static/sign_up.html"))
 		tmpl.Execute(w, Data)
 		Data.ErrorMessage = ""
-
 	case "POST":
 		db, _ := sql.Open("sqlite3", "./database.db")
 		ErrParseForm(w, r)
 		Data.ErrorMessage = ""
-
 		username := r.Form.Get("user_name") 
 		Firstletter := strings.ToUpper(string(username[0])) 
         username = Firstletter + username[1:]
@@ -36,12 +32,10 @@ func AddUser(w http.ResponseWriter, r *http.Request) {
 		password_confirm := r.Form.Get("confirm_password")
 		avatar := "user.png"
 		user := "user"
-
 		if AdminSystem(mail) {
 			avatar = "admin.png"
 			user = "admin"
 		}
-
 		if CheckMail(mail) && password != password_confirm {
 			Data.ErrorMessage = "Email déjà utilisé et mot de passe incorect"
 			http.Redirect(w, r, "/adduser", 301)

@@ -9,13 +9,11 @@ import (
 func Promote(w http.ResponseWriter, r *http.Request) {
 	db, _ := sql.Open("sqlite3", "./database.db")
 	ErrParseForm(w, r)
-
 	infos := r.Form.Get("promotion")
 	infoslist := strings.Split(infos, " ")
 	promotion := infoslist[0]
 	uid := infoslist[1]
 	typeUser := infoslist[2]
-
 	if promotion == "promote" {
 		if typeUser == "user" {
 			_, err := db.Exec(`UPDATE user SET type = ?, avatar = ? WHERE uid = ?`, "modo","modo.png", uid)
@@ -33,6 +31,5 @@ func Promote(w http.ResponseWriter, r *http.Request) {
 			Debug(err)
 		}
 	}
-
 	http.Redirect(w, r, "/profile", 301)
 }

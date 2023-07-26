@@ -8,7 +8,6 @@ import (
 func TableCreation() {
 	db, err := sql.Open("sqlite3", "./database.db")
 	Debug(err)
-
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS user 
 	(
 		id INTEGER PRIMARY KEY, 
@@ -20,9 +19,7 @@ func TableCreation() {
 		type TEXT
 
 	);`)
-
 	Debug(err)
-
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS posts 
 	(
 		pid INTEGER PRIMARY KEY, 
@@ -31,11 +28,8 @@ func TableCreation() {
 		date TEXT,
 		contentPhoto TEXT,
 		uid TEXT
-
 	);`)
-
 	Debug(err)
-
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS comments 
 	(
 		cid INTEGER PRIMARY KEY,
@@ -44,9 +38,7 @@ func TableCreation() {
 		date TEXT,
 		uid TEXT
 	); `)
-
 	Debug(err)
-
 	_, err = db.Exec(`CREATE TABLE IF NOT EXISTS likes 
 	(
 		id INTEGER PRIMARY KEY, 
@@ -56,6 +48,5 @@ func TableCreation() {
 		pid INTEGER,
 		cid INTEGER
 	);`)
-
 	Debug(err)
 }

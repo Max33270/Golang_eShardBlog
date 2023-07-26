@@ -3,7 +3,6 @@ package forum
 import (
 	"strconv"
 	"time"
-	
 )
 
 func TimeSince(date1 string) string {
@@ -20,14 +19,12 @@ func TimeSince(date1 string) string {
 	min2, _ := strconv.Atoi(t[14:16])
 	sec1, _ := strconv.Atoi(date1[17:19])
 	sec2, _ := strconv.Atoi(t[17:19])
-
 	year := int(year2) - int(year1)
 	month := int(month2) - int(month1)
 	day := int(day2) - int(day1)
 	hour := int(hour2) - int(hour1)
 	min := int(min2) - int(min1)
 	sec := int(sec2) - int(sec1)
-
 	if year > 0 {
 		return strconv.Itoa(year) + "y"
 	} else if month > 0 {
@@ -43,5 +40,4 @@ func TimeSince(date1 string) string {
 	} else {
 		return "now"
 	}
-
 }

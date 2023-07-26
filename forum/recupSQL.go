@@ -3,12 +3,10 @@ package forum
 import (
 	"database/sql"
 	"fmt"
-
 	_ "github.com/mattn/go-sqlite3"
 )
 
 func RecupUser() {
-	//users
 	var id int
 	var uid string
 	var username string
@@ -16,30 +14,22 @@ func RecupUser() {
 	var passwd string
 	var avatar string
 	typee := "guest"
-
 	db, err := sql.Open("sqlite3", "./database.db")
 	Debug(err)
-
 	rows, err := db.Query("SELECT * FROM user")
 	Debug(err)
-
 	err = rows.Err()
 	Debug(err)
-
 	var newTab []User
-
 	for rows.Next() {
 		err = rows.Scan(&id, &uid, &username, &email, &passwd, &avatar, &typee)
 		Debug(err)
 		newTab = append(newTab, User{Id: id, Uid: uid, Email: email, Username: username, Passwd: passwd, Avatar: avatar, Type: typee})
 	}
-
 	Users = newTab
 }
 
 func RecupPost() {
-
-	//Posts
 	var pid int
 	var content string
 	var category string
@@ -47,33 +37,25 @@ func RecupPost() {
 	var date string
 	var counter int
 	var contentPhoto string
-
 	db, err := sql.Open("sqlite3", "./database.db")
 	Debug(err)
-
 	rows, err := db.Query("SELECT * FROM posts")
 	Debug(err)
-
 	err = rows.Err()
 	Debug(err)
-
 	var newTab []Post
 	for rows.Next() {
-
 		err = rows.Scan(&pid, &content, &category, &date, &contentPhoto, &uid)
 		Debug(err)
 		date = TimeSince(date)
-
 		count, err := db.Query(`SELECT COUNT(*) FROM likes WHERE pid = ?`, pid)
 		Debug(err)
 		for count.Next() {
 			_ = count.Scan(&counter)
 		}
-		// сounter = 1465
 		finalcounter := Adaptlikes(counter)
 		newTab = append(newTab, Post{Pid: pid, Content: content, Category: category, Uid: uid, LikeActive: "unlike", Like: finalcounter, Date: date, ContentPhoto: contentPhoto, Like2: counter})
 	}
-
 	for post := range newTab {
 		for _, user := range Users {
 			if newTab[post].Uid == user.Uid {
@@ -81,12 +63,10 @@ func RecupPost() {
 			}
 		}
 	}
-
 	Posts = newTab
 }
 
 func RecupComment() {
-	//comments
 	var cid int
 	var pid int
 	var comment string
@@ -94,34 +74,27 @@ func RecupComment() {
 	var user_comment User
 	var date string
 	var counter int
-
 	db, err := sql.Open("sqlite3", "./database.db")
 	Debug(err)
 	rows, err := db.Query("SELECT * FROM comments")
 	Debug(err)
 	err = rows.Err()
 	Debug(err)
-
 	for rows.Next() {
-
 		err = rows.Scan(&cid, &pid, &comment, &date, &uid)
 		Debug(err)
-
 		date = TimeSince(date)
 		count, err := db.Query(`SELECT COUNT(*) FROM likes WHERE cid = ?`, cid)
 		Debug(err)
 		for count.Next() {
 			_ = count.Scan(&counter)
 		}
-
 		for _, user := range Users {
 			if uid == user.Uid {
 				user_comment = user
 				break
 			}
 		}
-		// counter = 3987888
-
 		finalcounter := Adaptlikes(counter)
 		for post := range Posts {
 			if pid == Posts[post].Pid {
@@ -132,15 +105,12 @@ func RecupComment() {
 }
 
 func RecupLike(User User) {
-	//like
 	var id int
 	var uid string
 	var user_liked string
 	var vu bool
 	var pid int
 	var cid int
-	// var uidreceveur string
-
 	db, err := sql.Open("sqlite3", "./database.db")
 	Debug(err)
 	rows, err := db.Query("SELECT * FROM likes")
@@ -149,7 +119,6 @@ func RecupLike(User User) {
 	Debug(err)
 	Data.Notifications = []string{}
 	for rows.Next() {
-
 		err = rows.Scan(&id, &uid, &user_liked, &vu, &pid, &cid)
 		Debug(err)
 		if !vu && User.Uid == user_liked {
@@ -179,7 +148,6 @@ func RecupLike(User User) {
 		}
 	}
 	Data.Notifs = len(Data.Notifications)
-
 }
 
 func Adaptlikes(like int) string {

@@ -2,33 +2,27 @@ var typeUser = "";
 var a = true;
 var id_div = 5;
 
-
 function NewComment(id) {
   if (a == true) {
     var input = document.createElement("div");
     input.className = "input";
-
     var formCom = document.createElement("form");
     formCom.action = "/addcomment";
     formCom.method = "POST";
-
     var inputText = document.createElement("input");
     inputText.type = "text";
     inputText.name = "comment_content";
     inputText.placeholder = "Add a comment...";
     formCom.appendChild(inputText);
-
     var inputhidden = document.createElement("input");
     inputhidden.name = "post_id";
     inputhidden.type = "hidden";
     inputhidden.value = id;
     formCom.appendChild(inputhidden);
-    
     var inputButton = document.createElement("button");
     inputButton.innerHTML = "Post";
     formCom.appendChild(inputButton);
     input.appendChild(formCom);
-
     var comments = document.getElementsByClassName("comment");
     console.log(comments);
     for (var i = 0; i < comments.length; i++) {
@@ -40,7 +34,6 @@ function NewComment(id) {
   }
 }
 
-
 function SelectFilters() {
   if (document.getElementById("filters").style.display == "none") {
     document.getElementById("filters").style.display = "block";
@@ -48,7 +41,6 @@ function SelectFilters() {
     document.getElementById("filters").style.display = "none";
   }
 }
-
 
 function modify(id){
   var elements = document.getElementsByClassName('modify-post');
@@ -62,7 +54,6 @@ function modify(id){
   }
 }
 
-
 function UserPermissions(type){
   typeUser = type
   if (type == "guest") {
@@ -73,7 +64,6 @@ function UserPermissions(type){
     document.getElementById("user-profile").style.display = "none";
   }
 }
-
 
 function Like(){
   document.querySelectorAll(".fa-heart")
@@ -94,7 +84,6 @@ function Like(){
   });
 }
 
-
 function replace(id){
   if (id != id_div){
     document.getElementById('div' + id).style.display = "flex";
@@ -102,7 +91,6 @@ function replace(id){
     id_div = id;
   }
 }
-
 
 function modifypost(id){
   var elements = document.getElementById('post-content'+id);
